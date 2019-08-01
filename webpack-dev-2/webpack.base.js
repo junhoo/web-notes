@@ -7,13 +7,12 @@ let webpack = require('webpack');
 // 2) copyWebpackPlugin
 // 3) bannerPlugin  内置
 module.exports = {
- 
   entry: { home: './src/index.js', },
   module: {
     rules: [
       {
-        test:/\.css$/,
-        use:['style-loader','css-loader']
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       },
       {
         test: /\.js$/,
@@ -26,19 +25,19 @@ module.exports = {
       }
     ]
   },
-  resolve:{ // 解析 第三方包 common
-    modules:[path.resolve('node_modules')],
-    extensions:['.js','.css','.json','.vue'],
+  resolve: { // 解析 第三方包 common
+    modules: [path.resolve('node_modules')],
+    extensions: ['.js', '.css', '.json', '.vue'],
     // mainFields:['style','main']
     // mainFiles:[], // 入口文件的名字 index.js
     // alias:{ // 别名 vue vue.runtime
     //   bootstrap:'bootstrap/dist/css/bootstrap.css'
     // }
   },
-  devServer:{
+  devServer: {
     //3) 有服务端 不用用代理来处理 能不能再服务端中启动webpack 端口用服务端端口
-    
-    
+
+
     //2） 我们前端只想单纯来模拟数据
     // before(app){ // 提供的方法 钩子
     //   app.get('/user',(req,res)=>{
@@ -59,9 +58,9 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      DEV:JSON.stringify('production'),   //console.log('dev')
-      FLAG:'true',
-      EXPORESSION:JSON.stringify('1+1')
+      DEV: JSON.stringify('production'),   //console.log('dev')
+      FLAG: 'true',
+      EXPORESSION: JSON.stringify('1+1')
     }),
     new HtmlWebpackPlugin({
       template: './index.html',
