@@ -11,7 +11,7 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "less": "^3.9.0",
-    "loader-utils": "^1.1.0",
+    "loader-utils": "^1.4.2",
     "mime": "^2.4.0",
     "schema-utils": "^1.0.0"
   }
